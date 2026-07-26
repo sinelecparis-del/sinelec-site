@@ -160,3 +160,78 @@ footer { border-top: 1px solid var(--border); padding: 40px 0; color: var(--text
   .sticky-call { display: block; }
   body { padding-bottom: 58px; } /* évite que la barre cache le bas de page */
 }
+
+/* ===== HERO V2 — ajout classes manquantes ===== */
+.hero-v2 { position: relative; padding: 56px 0 48px; overflow: hidden; border-bottom: 1px solid var(--border); }
+.hero-v2 .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: start; }
+@media (max-width: 900px) { .hero-v2 .wrap { grid-template-columns: 1fr; } }
+
+.online-now { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+.dot-green { width: 8px; height: 8px; border-radius: 50%; background: #2E9E5B; box-shadow: 0 0 0 0 rgba(46,158,91,0.6); animation: pulse-green 2s infinite; }
+@keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(46,158,91,0.55); } 70% { box-shadow: 0 0 0 8px rgba(46,158,91,0); } 100% { box-shadow: 0 0 0 0 rgba(46,158,91,0); } }
+@media (prefers-reduced-motion: reduce) { .dot-green { animation: none; } }
+
+.trust-badges-v2 { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0; }
+.badge-v2 { display: flex; align-items: center; gap: 10px; border: 1px solid var(--border); background: var(--bg-panel); border-radius: var(--radius); padding: 10px 14px; text-decoration: none; color: var(--text); }
+.badge-v2 .ic { font-size: 18px; }
+.badge-v2 strong { display: block; font-size: 14px; line-height: 1.2; }
+.badge-v2 small { display: block; font-size: 12px; color: var(--text-muted); }
+a.badge-v2:hover { background: var(--bg-panel-hover); }
+
+.btn-primary-v2 { background: var(--accent); color: #14100A; font-weight: 600; padding: 15px 24px; border-radius: var(--radius); text-decoration: none; font-size: 16px; display: inline-flex; align-items: center; gap: 8px; }
+.btn-primary-v2:hover { filter: brightness(1.06); }
+
+.tap-hint { display: inline-block; margin-top: 10px; font-size: 13px; color: var(--text-muted); }
+@media (min-width: 800px) { .tap-hint { display: none; } }
+
+.price-reassurance { display: flex; align-items: flex-start; gap: 12px; background: var(--accent-dim); border: 1px solid rgba(184,114,30,0.25); border-radius: var(--radius); padding: 16px 18px; margin-top: 28px; }
+.price-reassurance .ic { font-size: 18px; line-height: 1; }
+.price-reassurance p { margin: 0; font-size: 14.5px; color: var(--text); }
+.price-reassurance strong { color: var(--text); }
+
+/* ===== FORM CARD ===== */
+.form-card-v2 {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 8px 28px rgba(28, 33, 38, 0.08);
+  position: sticky;
+  top: 90px;
+}
+.form-card-v2 h3 { font-family: var(--font-display); font-size: 24px; margin: 0 0 4px; font-weight: 700; }
+.form-card-v2 .sub { color: var(--text-muted); font-size: 14px; margin: 0 0 20px; }
+.form-card-v2 form { display: flex; flex-direction: column; gap: 12px; }
+.form-card-v2 input,
+.form-card-v2 textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 15px;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.form-card-v2 input::placeholder,
+.form-card-v2 textarea::placeholder { color: var(--text-muted); }
+.form-card-v2 input:focus,
+.form-card-v2 textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+.form-card-v2 textarea { resize: vertical; min-height: 84px; }
+.form-card-v2 button[type="submit"] {
+  background: var(--accent);
+  color: #14100A;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 15px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: filter 0.15s ease;
+}
+.form-card-v2 button[type="submit"]:hover { filter: brightness(1.06); }
+.form-card-v2 button[type="submit"]:disabled { opacity: 0.6; cursor: not-allowed; }
+.form-card-v2 .rgpd { font-size: 12px; color: var(--text-muted); margin: 4px 0 0; line-height: 1.4; }
