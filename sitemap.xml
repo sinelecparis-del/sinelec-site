@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sinelec-site-production.up.railway.app/index.html</loc>
+    <loc>https://www.sinelec-paris.fr/index.html</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sinelec-site-production.up.railway.app/services/recherche-panne.html</loc>
+    <loc>https://www.sinelec-paris.fr/services/recherche-panne.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sinelec-site-production.up.railway.app/services/disjoncteur-standard.html</loc>
+    <loc>https://www.sinelec-paris.fr/services/disjoncteur-standard.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sinelec-site-production.up.railway.app/services/disjoncteur-differentiel-63a.html</loc>
+    <loc>https://www.sinelec-paris.fr/services/disjoncteur-differentiel-63a.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sinelec-site-production.up.railway.app/services/prise.html</loc>
+    <loc>https://www.sinelec-paris.fr/services/prise.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sinelec-site-production.up.railway.app/services/interrupteur.html</loc>
+    <loc>https://www.sinelec-paris.fr/services/interrupteur.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sinelec-site-production.up.railway.app/services/luminaire.html</loc>
+    <loc>https://www.sinelec-paris.fr/services/luminaire.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sinelec-site-production.up.railway.app/services/detecteur-fumee.html</loc>
+    <loc>https://www.sinelec-paris.fr/services/detecteur-fumee.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sinelec-site-production.up.railway.app/services/interphone.html</loc>
+    <loc>https://www.sinelec-paris.fr/services/interphone.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sinelec-site-production.up.railway.app/services/alarme-video.html</loc>
+    <loc>https://www.sinelec-paris.fr/services/alarme-video.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sinelec-site-production.up.railway.app/services/tableau-electrique.html</loc>
+    <loc>https://www.sinelec-paris.fr/services/tableau-electrique.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
