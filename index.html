@@ -108,22 +108,93 @@
   </div>
 </header>
 
-<section class="hero">
+<section class="hero-v2">
   <div class="wrap">
-    <div class="eyebrow"><span class="pulse"></span> Intervention 24h/24 — 7j/7</div>
-    <h1>Dépannage électrique à Paris et en Île-de-France, forfaits fixes affichés</h1>
-    <p class="lede">SINELEC intervient à <strong>Paris et dans 6 départements franciliens</strong> (92, 93, 94, 91, 78, 95) pour tout dépannage ou mise aux normes électrique. Déplacement <strong>65€ HT</strong>, partout en Île-de-France. Recherche de panne <strong>195€</strong>, disjoncteur standard <strong>245€</strong>, disjoncteur différentiel 63A <strong>325€</strong> — prix fixes, sans surprise, garantie décennale ORUS.</p>
-    <div class="hero-actions">
-      <a href="tel:+33787388622" class="btn-primary">Appeler maintenant — 07 87 38 86 22</a>
-      <a href="#services" class="btn-ghost">Voir tous les forfaits</a>
+    <div>
+      <div class="online-now"><span class="dot-green"></span> Un technicien est disponible maintenant</div>
+      <h1>Dépannage électrique à Paris et en Île-de-France, forfaits fixes affichés</h1>
+      <p class="lede">SINELEC intervient à <strong>Paris et dans 6 départements franciliens</strong> (92, 93, 94, 91, 78, 95) pour tout dépannage ou mise aux normes électrique. Déplacement <strong>65€ HT</strong>, partout en Île-de-France. Recherche de panne <strong>195€</strong>, disjoncteur standard <strong>245€</strong>, disjoncteur différentiel 63A <strong>325€</strong> — prix fixes, sans surprise, garantie décennale ORUS.</p>
+
+      <div class="trust-badges-v2">
+        <a href="https://g.page/r/CSw-MABnFUAYEAE" target="_blank" rel="noopener" class="badge-v2">
+          <span class="ic">⭐</span><div><strong>5.0/5</strong><small>106 avis Google</small></div>
+        </a>
+        <div class="badge-v2"><span class="ic">✓</span><div><strong>24h/24</strong><small>7j/7, jours fériés inclus</small></div></div>
+        <div class="badge-v2"><span class="ic">🛡️</span><div><strong>Assuré</strong><small>Décennale ORUS</small></div></div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="tel:+33787388622" class="btn-primary-v2">📞 Appeler maintenant — 07 87 38 86 22</a>
+        <a href="#services" class="btn-ghost">Voir tous les forfaits</a>
+      </div>
+      <span class="tap-hint">Sur mobile : appui direct pour appeler</span>
+
+      <div class="price-reassurance">
+        <span class="ic">💬</span>
+        <p><strong>Prix confirmé par téléphone avant tout déplacement.</strong> Jamais de surprise sur la facture finale — le forfait annoncé est celui payé.</p>
+      </div>
+
+      <div class="hero-meta">
+        <span><b>SIRET</b> 910 158 245 00019</span>
+        <span><b>Zone</b> 75 · 92 · 93 · 94 · 91 · 78 · 95</span>
+        <span><b>Garantie</b> Décennale ORUS</span>
+      </div>
     </div>
-    <div class="hero-meta">
-      <span><b>SIRET</b> 910 158 245 00019</span>
-      <span><b>Zone</b> 75 · 92 · 93 · 94 · 91 · 78 · 95</span>
-      <span><b>Garantie</b> Décennale ORUS</span>
+
+    <div class="form-card-v2">
+      <h3>Devis gratuit en 2 minutes</h3>
+      <p class="sub">Réponse rapide garantie</p>
+      <form id="leadForm">
+        <input type="text" name="nom" placeholder="Votre nom *" required>
+        <input type="tel" name="telephone" placeholder="Téléphone *" required>
+        <input type="text" name="adresse" placeholder="Adresse (Paris / IDF)">
+        <textarea name="description" placeholder="Décrivez votre besoin..."></textarea>
+        <button type="submit">Recevoir mon devis gratuit</button>
+        <p class="rgpd">Vos informations servent uniquement à vous recontacter, jamais partagées.</p>
+      </form>
     </div>
   </div>
 </section>
+
+<script>
+document.getElementById('leadForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button');
+  const originalText = btn.textContent;
+  btn.textContent = 'Envoi en cours...';
+  btn.disabled = true;
+
+  const payload = {
+    nom: this.nom.value,
+    telephone: this.telephone.value,
+    adresse: this.adresse.value,
+    description: this.description.value,
+    page_origine: window.location.pathname
+  };
+
+  try {
+    const res = await fetch('https://jbuoiahcovngebzwpovg.supabase.co/rest/v1/leads_site', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': 'sb_publishable_bZSJoiOz8uragUIH7sz5sA_8lNXUvaj',
+        'Authorization': 'Bearer sb_publishable_bZSJoiOz8uragUIH7sz5sA_8lNXUvaj',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(payload)
+    });
+    if (res.ok) {
+      this.innerHTML = '<div style="text-align:center;padding:20px 0;"><div style="font-size:40px;margin-bottom:12px;">✅</div><h3 style="margin-bottom:6px;">Demande envoyée !</h3><p style="color:var(--text-muted);">On vous rappelle très vite au ' + payload.telephone + '</p></div>';
+    } else {
+      throw new Error('Erreur envoi');
+    }
+  } catch (err) {
+    btn.textContent = originalText;
+    btn.disabled = false;
+    alert("Erreur d'envoi. Merci d'appeler directement le 07 87 38 86 22.");
+  }
+});
+</script>
 
 <section id="services">
   <div class="wrap">
@@ -294,5 +365,6 @@
 </footer>
 
 <div class="sticky-call"><a href="tel:+33787388622"><span class="pulse-dot"></span> Appeler maintenant — 07 87 38 86 22</a></div>
+<a href="https://wa.me/33787388622" class="whatsapp-float-v2" target="_blank" rel="noopener">💬</a>
 </body>
 </html>
