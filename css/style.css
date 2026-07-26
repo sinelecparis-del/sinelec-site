@@ -128,3 +128,35 @@ footer { border-top: 1px solid var(--border); padding: 40px 0; color: var(--text
 .steps li:before { content: counter(step); position: absolute; left: 0; top: 14px; width: 26px; height: 26px; border: 1.5px solid var(--accent); border-radius: 50%; color: var(--accent); font-family: var(--font-mono); font-size: 13px; display: flex; align-items: center; justify-content: center; }
 .steps h4 { margin: 0 0 4px; font-size: 16px; }
 .steps p { margin: 0; color: var(--text-muted); font-size: 15px; }
+
+/* Barre d'appel fixe (mobile uniquement) */
+.sticky-call {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--urgent);
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.35);
+}
+.sticky-call a {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 20px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: var(--font-body);
+}
+.sticky-call .pulse-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 0 rgba(255,255,255,0.6);
+  animation: pulse-call 1.6s infinite;
+  flex: none;
+}
+@keyframes pulse-call { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.55); } 70% { box-shadow: 0 0 0 9px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
+@media (prefers-reduced-motion: reduce) { .sticky-call .pulse-dot { animation: none; } }
+@media (max-width: 799px) {
+  .sticky-call { display: block; }
+  body { padding-bottom: 58px; } /* évite que la barre cache le bas de page */
+}
