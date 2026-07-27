@@ -157,6 +157,11 @@
       <h3>Devis gratuit en 2 minutes</h3>
       <p class="sub">Réponse rapide garantie</p>
       <form id="leadForm">
+        <div class="type-demande-toggle" style="display:flex;gap:8px;margin-bottom:14px;">
+          <button type="button" class="type-btn active" data-type="devis" style="flex:1;padding:12px 8px;border-radius:10px;border:1.5px solid #C9A84C;background:#C9A84C;color:#fff;font-weight:700;font-size:13px;cursor:pointer;">📋 Devis gratuit</button>
+          <button type="button" class="type-btn" data-type="depannage" style="flex:1;padding:12px 8px;border-radius:10px;border:1.5px solid #d1d5db;background:#fff;color:#333;font-weight:700;font-size:13px;cursor:pointer;">🚨 Urgence / Dépannage</button>
+        </div>
+        <input type="hidden" name="type_demande" value="devis">
         <input type="text" name="nom" placeholder="Votre nom *" required>
         <input type="tel" name="telephone" placeholder="Téléphone *" required>
         <input type="email" name="email" placeholder="Email *" required>
@@ -170,6 +175,27 @@
 </section>
 
 <script>
+document.querySelectorAll('.type-btn').forEach(function(b) {
+  b.addEventListener('click', function() {
+    document.querySelectorAll('.type-btn').forEach(function(x) {
+      x.classList.remove('active');
+      x.style.background = '#fff';
+      x.style.color = '#333';
+      x.style.borderColor = '#d1d5db';
+    });
+    this.classList.add('active');
+    if (this.dataset.type === 'depannage') {
+      this.style.background = '#dc2626';
+      this.style.borderColor = '#dc2626';
+    } else {
+      this.style.background = '#C9A84C';
+      this.style.borderColor = '#C9A84C';
+    }
+    this.style.color = '#fff';
+    document.querySelector('input[name="type_demande"]').value = this.dataset.type;
+  });
+});
+
 document.getElementById('leadForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = this.querySelector('button[type="submit"]');
@@ -183,6 +209,7 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
     email: this.email.value,
     adresse: this.adresse.value,
     description: this.description.value,
+    type_demande: this.type_demande.value,
     page_origine: window.location.pathname
   };
 
