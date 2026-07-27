@@ -147,6 +147,7 @@
       <form id="leadForm">
         <input type="text" name="nom" placeholder="Votre nom *" required>
         <input type="tel" name="telephone" placeholder="Téléphone *" required>
+        <input type="email" name="email" placeholder="Email *" required>
         <input type="text" name="adresse" placeholder="Adresse (Paris / IDF)">
         <textarea name="description" placeholder="Décrivez votre besoin..."></textarea>
         <button type="submit">Recevoir mon devis gratuit</button>
@@ -167,6 +168,7 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
   const payload = {
     nom: this.nom.value,
     telephone: this.telephone.value,
+    email: this.email.value,
     adresse: this.adresse.value,
     description: this.description.value,
     page_origine: window.location.pathname
