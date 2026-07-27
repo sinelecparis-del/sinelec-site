@@ -100,6 +100,7 @@
     <a href="/" class="logo">SINELEC<span class="dot">·</span>PARIS</a>
     <nav class="nav-links">
       <a href="#services">Forfaits</a>
+      <a href="#realisations">Réalisations</a>
       <a href="#zones">Zones</a>
       <a href="#confiance">Garanties</a>
       <a href="#faq">FAQ</a>
@@ -160,7 +161,7 @@
 <script>
 document.getElementById('leadForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-  const btn = this.querySelector('button');
+  const btn = this.querySelector('button[type="submit"]');
   const originalText = btn.textContent;
   btn.textContent = 'Envoi en cours...';
   btn.disabled = true;
@@ -197,6 +198,40 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
   }
 });
 </script>
+
+<section id="realisations">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Nos réalisations</div>
+      <h2>De vrais chantiers, de vrais résultats</h2>
+      <p class="section-sub">Faites glisser pour voir la différence. Rénovation complète de tableau électrique, aux normes NF C 15-100.</p>
+    </div>
+
+    <div class="real-grid">
+      <div class="real-card">
+        <div class="compare">
+          <figure class="a"><img src="img/chantiers/bezons-avant.jpg" alt="Tableau électrique avant rénovation - Bezons"><figcaption>Avant</figcaption></figure>
+          <figure class="b"><img src="img/chantiers/bezons-apres.jpg" alt="Tableau électrique après rénovation - Bezons"><figcaption>Après</figcaption></figure>
+        </div>
+        <div class="real-info">
+          <div class="title">Rénovation complète de tableau électrique</div>
+          <div class="loc">Bezons (95)</div>
+        </div>
+      </div>
+
+      <div class="real-card">
+        <div class="compare">
+          <figure class="a"><img src="img/chantiers/bagneux-avant.jpg" alt="Ancien tableau à fusibles porcelaine"><figcaption>Avant</figcaption></figure>
+          <figure class="b"><img src="img/chantiers/bagneux-apres.jpg" alt="Nouveau tableau électrique Legrand/Hager"><figcaption>Après</figcaption></figure>
+        </div>
+        <div class="real-info">
+          <div class="title">Remplacement tableau à fusibles porcelaine</div>
+          <div class="loc">Île-de-France</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="services">
   <div class="wrap">
