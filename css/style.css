@@ -80,7 +80,8 @@ h2 { font-family: var(--font-display); font-size: clamp(26px, 3.6vw, 36px); font
 .svc-note { color: var(--text-muted); font-size: 13px; margin-top: 6px; }
 
 .zones-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
-.zone-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; background: var(--bg-panel); }
+.zone-card { display: block; text-decoration: none; border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; background: var(--bg-panel); transition: border-color 0.15s, transform 0.15s; }
+.zone-card:hover { border-color: var(--accent); transform: translateY(-2px); }
 .zone-num { font-family: var(--font-mono); color: var(--accent); font-size: 22px; font-weight: 600; }
 .zone-name { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
 .zone-price { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-top: 8px; border-top: 1px solid var(--border); padding-top: 8px; }
@@ -311,3 +312,46 @@ a.badge-v2:hover { background: var(--bg-panel-hover); }
 .avis-card .stars { color: var(--accent); font-size: 15px; margin-bottom: 10px; letter-spacing: 2px; }
 .avis-card p { font-size: 14.5px; margin: 0 0 14px; color: var(--text); }
 .avis-card .who { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+
+/* ===== PROFESSIONNELS / SYNDICS ===== */
+.pro-band {
+  display: flex; align-items: center; justify-content: space-between; gap: 28px;
+  flex-wrap: wrap;
+  background: var(--text);
+  color: #F5F1E9;
+  border-radius: 10px;
+  padding: 36px 40px;
+}
+.pro-band-text { flex: 1; min-width: 260px; }
+.pro-band .eyebrow { color: var(--accent); }
+.pro-band h2 { color: #fff; margin-bottom: 10px; }
+.pro-band p { color: #C9C2B4; font-size: 15px; margin: 0; max-width: 62ch; }
+.pro-band .btn-primary-v2 { flex: none; white-space: nowrap; }
+
+/* ===== DEVIS EN LIGNE / SIGNATURE / RDV ===== */
+.online-band {
+  display: flex; align-items: center; justify-content: space-between; gap: 28px;
+  flex-wrap: wrap;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 36px 40px;
+  box-shadow: 0 4px 18px rgba(28,33,38,0.06);
+}
+.online-band-text { flex: 1; min-width: 280px; }
+.online-band-text p { color: var(--text-muted); font-size: 15px; max-width: 60ch; margin: 0 0 20px; }
+.online-steps { display: flex; flex-wrap: wrap; gap: 14px; }
+.online-step {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13.5px; font-weight: 500;
+  background: var(--accent-dim);
+  border-radius: 20px;
+  padding: 7px 14px 7px 8px;
+}
+.online-step .num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--accent); color: #14100A;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+}
+.online-band .btn-primary-v2 { flex: none; white-space: nowrap; }
