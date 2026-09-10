@@ -41,11 +41,11 @@ img { max-width: 100%; display: block; }
 .trace .node { width: 7px; height: 7px; border-radius: 50%; border: 1.5px solid var(--accent); background: var(--bg); flex: none; }
 
 header.site { position: sticky; top: 0; z-index: 50; background: rgba(250, 248, 245, 0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); }
-.nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+.nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 10px; padding: 14px 0; }
 .logo { font-family: var(--font-display); font-weight: 700; font-size: 22px; letter-spacing: 0.02em; text-decoration: none; display: flex; align-items: baseline; gap: 6px; }
 .logo .dot { color: var(--accent); }
-.nav-links { display: none; gap: 28px; font-size: 15px; font-weight: 500; }
-.nav-links a { text-decoration: none; color: var(--text-muted); }
+.nav-links { display: none; flex-wrap: wrap; gap: 8px 16px; font-size: 14px; font-weight: 500; flex-basis: 100%; flex-shrink: 0; justify-content: center; order: 10; }
+.nav-links a { text-decoration: none; color: var(--text-muted); white-space: nowrap; }
 .nav-links a:hover { color: var(--text); }
 @media (min-width: 800px) { .nav-links { display: flex; } }
 .call-btn { background: var(--accent); color: #14100A; font-weight: 600; font-family: var(--font-mono); font-size: 14px; padding: 10px 16px; border-radius: var(--radius); text-decoration: none; white-space: nowrap; }
