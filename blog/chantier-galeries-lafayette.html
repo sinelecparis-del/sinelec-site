@@ -21,6 +21,25 @@
   "mainEntityOfPage": "https://www.sinelec-paris.fr/blog/chantier-galeries-lafayette.html"
 }
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK514ZDWY9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MK514ZDWY9');
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        gtag('event', 'click_call', { event_category: 'engagement', event_label: link.getAttribute('href') });
+      });
+    });
+    document.querySelectorAll('a[href^="https://wa.me"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        gtag('event', 'click_whatsapp', { event_category: 'engagement' });
+      });
+    });
+  });
+</script>
 </head>
 <body>
 

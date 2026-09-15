@@ -108,6 +108,25 @@
   ]
 }
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK514ZDWY9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MK514ZDWY9');
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        gtag('event', 'click_call', { event_category: 'engagement', event_label: link.getAttribute('href') });
+      });
+    });
+    document.querySelectorAll('a[href^="https://wa.me"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        gtag('event', 'click_whatsapp', { event_category: 'engagement' });
+      });
+    });
+  });
+</script>
 </head>
 <body>
 
@@ -244,6 +263,9 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
       body: JSON.stringify(payload)
     });
     if (res.ok) {
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { event_category: 'conversion', event_label: payload.type_demande });
+      }
       this.innerHTML = '<div style="text-align:center;padding:20px 0;"><div style="font-size:40px;margin-bottom:12px;">✅</div><h3 style="margin-bottom:6px;">Demande envoyée !</h3><p style="color:var(--text-muted);">On vous rappelle très vite au ' + payload.telephone + '</p></div>';
     } else {
       throw new Error('Erreur envoi');
