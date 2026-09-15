@@ -101,7 +101,7 @@
     } else if (consent !== 'refused') {
       var banner = document.createElement('div');
       banner.className = 'cookie-banner';
-      banner.innerHTML = '<p>Ce site utilise Google Analytics pour mesurer l\'audience. Vos donn\u00e9es ne sont partag\u00e9es avec personne d\'autre.</p><div class="cookie-actions"><button type="button" class="cookie-refuse">Refuser</button><button type="button" class="cookie-accept">Accepter</button></div>';
+      banner.innerHTML = '<p>Ce site utilise Google Analytics pour mesurer l\'audience. Vos donn\u00e9es ne sont partag\u00e9es avec personne d\'autre. <a href=\'../politique-confidentialite.html\' style=\'color:#e8c37a;\'>En savoir plus</a></p><div class="cookie-actions"><button type="button" class="cookie-refuse">Refuser</button><button type="button" class="cookie-accept">Accepter</button></div>';
       document.body.appendChild(banner);
       banner.querySelector('.cookie-accept').addEventListener('click', function() {
         localStorage.setItem('sinelec_cookie_consent', 'accepted');

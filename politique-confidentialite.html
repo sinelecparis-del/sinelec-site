@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité | SINELEC Paris</title>
+<link rel="canonical" href="https://www.sinelec-paris.fr/politique-confidentialite.html">
+<meta name="description" content="Politique de confidentialité SINELEC Paris : données collectées, finalités, durées de conservation, cookies et droits RGPD.">
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied' });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK514ZDWY9"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-MK514ZDWY9');
+
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        gtag('event', 'click_call', { event_category: 'engagement', event_label: link.getAttribute('href') });
+      });
+    });
+    document.querySelectorAll('a[href^="https://wa.me"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        gtag('event', 'click_whatsapp', { event_category: 'engagement' });
+      });
+    });
+
+    var consent = localStorage.getItem('sinelec_cookie_consent');
+    if (consent === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    } else if (consent !== 'refused') {
+      var banner = document.createElement('div');
+      banner.className = 'cookie-banner';
+      banner.innerHTML = '<p>Ce site utilise Google Analytics pour mesurer l\'audience. Vos donn\u00e9es ne sont partag\u00e9es avec personne d\'autre. <a href="politique-confidentialite.html" style="color:#e8c37a;">En savoir plus</a></p><div class="cookie-actions"><button type="button" class="cookie-refuse">Refuser</button><button type="button" class="cookie-accept">Accepter</button></div>';
+      document.body.appendChild(banner);
+      banner.querySelector('.cookie-accept').addEventListener('click', function() {
+        localStorage.setItem('sinelec_cookie_consent', 'accepted');
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+        banner.remove();
+      });
+      banner.querySelector('.cookie-refuse').addEventListener('click', function() {
+        localStorage.setItem('sinelec_cookie_consent', 'refused');
+        banner.remove();
+      });
+    }
+  });
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="index.html" class="logo">SINELEC<span class="dot">·</span>PARIS</a>
+    <nav class="nav-links">
+      <a href="index.html#services">Forfaits</a>
+      <a href="realisations.html">Réalisations</a>
+      <a href="index.html#zones">Zones</a>
+      <a href="index.html#confiance">Garanties</a>
+    </nav>
+    <div class="header-ctas"><a href="tel:+33787388622" class="call-btn">07 87 38 86 22</a></div>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom: 20px;">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> / Politique de confidentialité</div>
+    <div class="eyebrow"><span class="pulse"></span> Vos données</div>
+    <h1>Politique de confidentialité</h1>
+    <p class="lede">Dernière mise à jour : septembre 2026.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap article-body">
+
+    <h3>1. Qui est responsable de vos données</h3>
+    <p>Le responsable du traitement des données collectées sur ce site est <strong>SINELEC</strong>, entreprise individuelle représentée par Diahe Sinera, SIRET 910 158 245 00019, domiciliée 128 rue La Boétie, 75008 Paris. Pour toute question sur vos données, vous pouvez nous écrire à <a href="mailto:sinelec.paris@gmail.com">sinelec.paris@gmail.com</a> ou nous appeler au 07 87 38 86 22.</p>
+
+    <h3>2. Quelles données nous collectons et pourquoi</h3>
+    <p>Lorsque vous remplissez le formulaire de devis, nous collectons votre nom, votre numéro de téléphone, votre adresse email, votre adresse d'intervention et la description de votre besoin. Ces informations servent uniquement à traiter votre demande et à vous recontacter — elles ne sont jamais revendues ni partagées avec un tiers à des fins commerciales.</p>
+    <p>Si vous acceptez les cookies de mesure d'audience (voir section 5), nous collectons également des données de navigation anonymisées via Google Analytics : pages consultées, provenance, type d'appareil.</p>
+
+    <h3>3. Sur quelle base légale</h3>
+    <p>Le traitement de votre demande de devis repose sur notre intérêt légitime à répondre aux demandes qui nous sont adressées, ainsi que sur les démarches précontractuelles nécessaires à l'établissement d'un devis. Le dépôt de cookies de mesure d'audience repose sur votre consentement, recueilli via le bandeau affiché à votre première visite.</p>
+
+    <h3>4. Combien de temps nous les conservons</h3>
+    <p>Les données d'une demande de devis sont conservées 12 mois à compter de notre dernier échange si elle ne donne pas suite. Si un devis est signé, les documents liés (devis, factures) sont conservés conformément à nos obligations comptables et fiscales (10 ans). Les données de navigation Google Analytics sont conservées 14 mois maximum.</p>
+
+    <h3>5. Cookies et mesure d'audience</h3>
+    <p>Ce site utilise Google Analytics pour comprendre comment il est utilisé (pages consultées, provenance des visiteurs). Ces cookies ne sont déposés qu'avec votre accord, donné via le bandeau affiché en bas de page. Vous pouvez refuser ou changer d'avis à tout moment en effaçant les données de navigation de votre appareil pour ce site, ce qui réaffichera le bandeau.</p>
+    <p>Google Analytics étant un service américain, les données anonymisées de navigation peuvent être traitées aux États-Unis, dans le cadre des clauses contractuelles types encadrant les transferts de données hors Union européenne.</p>
+
+    <h3>6. Qui a accès à vos données</h3>
+    <p>Vos données sont hébergées via Supabase (base de données) et ne sont accessibles qu'à SINELEC. Aucune donnée n'est vendue, louée ou partagée avec des tiers à des fins commerciales.</p>
+
+    <h3>7. Vos droits</h3>
+    <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement et d'opposition sur vos données personnelles. Pour exercer ces droits, contactez-nous à <a href="mailto:sinelec.paris@gmail.com">sinelec.paris@gmail.com</a>. Si vous estimez que vos droits ne sont pas respectés, vous pouvez déposer une réclamation auprès de la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>).</p>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Une question sur vos données ?</h2>
+      <p>Contactez-nous directement, on vous répond rapidement.</p>
+      <a href="tel:+33787388622" class="btn-primary">07 87 38 86 22</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-legal">
+      SINELEC — SIRET 910 158 245 00019 — APE 4321A — Garantie décennale ORUS
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-call"><a href="tel:+33787388622"><span class="pulse-dot"></span> Appeler maintenant — 07 87 38 86 22</a></div>
+</body>
+</html>
