@@ -284,6 +284,8 @@ a.badge-v2:hover { background: var(--bg-panel-hover); }
 .real-info { padding: 16px 18px 18px; }
 .real-info .title { font-weight: 600; font-size: 15px; margin-bottom: 3px; }
 .real-info .loc { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+.real-info .real-link { display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; }
+.real-info .real-link:hover { text-decoration: underline; }
 
 /* ===== BOUTON WHATSAPP FLOTTANT (manquait) ===== */
 .whatsapp-float-v2 {
