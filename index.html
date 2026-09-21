@@ -216,11 +216,11 @@
 
     <div class="form-card-v2" id="lead">
       <h3>Devis gratuit en 2 minutes</h3>
-      <p class="sub">Réponse rapide garantie</p>
+      <p class="sub" id="formSub">Réponse rapide garantie</p>
       <form id="leadForm">
         <div class="type-demande-toggle" style="display:flex;gap:8px;margin-bottom:14px;">
           <button type="button" class="type-btn active" data-type="devis" style="flex:1;padding:12px 8px;border-radius:10px;border:1.5px solid #C9A84C;background:#C9A84C;color:#fff;font-weight:700;font-size:13px;cursor:pointer;">📋 Devis gratuit</button>
-          <button type="button" class="type-btn" data-type="depannage" style="flex:1;padding:12px 8px;border-radius:10px;border:1.5px solid #d1d5db;background:#fff;color:#333;font-weight:700;font-size:13px;cursor:pointer;">🚨 Urgence / Dépannage</button>
+          <button type="button" class="type-btn" data-type="depannage" aria-label="Urgence dépannage électricien" style="flex:1;padding:12px 8px;border-radius:10px;border:1.5px solid #d1d5db;background:#fff;color:#333;font-weight:700;font-size:13px;cursor:pointer;">🚨 J'ai une urgence</button>
         </div>
         <input type="hidden" name="type_demande" value="devis">
         <input type="text" name="nom" placeholder="Votre nom *" required>
@@ -255,6 +255,16 @@ document.querySelectorAll('.type-btn').forEach(function(b) {
     this.style.color = '#fff';
     document.querySelector('input[name="type_demande"]').value = this.dataset.type;
     document.getElementById('submitBtn').textContent = this.dataset.type === 'depannage' ? 'Demander une intervention' : 'Recevoir mon devis gratuit';
+    var sub = document.getElementById('formSub');
+    if (this.dataset.type === 'depannage') {
+      sub.textContent = 'Un technicien vous rappelle sous 20 min';
+      sub.style.color = '#dc2626';
+      sub.style.fontWeight = '700';
+    } else {
+      sub.textContent = 'Réponse rapide garantie';
+      sub.style.color = '';
+      sub.style.fontWeight = '';
+    }
   });
 });
 
