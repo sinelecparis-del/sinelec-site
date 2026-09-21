@@ -228,7 +228,7 @@
         <input type="email" name="email" placeholder="Email *" required>
         <input type="text" name="adresse" placeholder="Adresse (Paris / IDF)">
         <textarea name="description" placeholder="Décrivez votre besoin..."></textarea>
-        <button type="submit">Recevoir mon devis gratuit</button>
+        <button type="submit" id="submitBtn">Recevoir mon devis gratuit</button>
         <p class="rgpd">Vos informations servent uniquement à vous recontacter, jamais partagées.</p>
       </form>
     </div>
@@ -254,6 +254,7 @@ document.querySelectorAll('.type-btn').forEach(function(b) {
     }
     this.style.color = '#fff';
     document.querySelector('input[name="type_demande"]').value = this.dataset.type;
+    document.getElementById('submitBtn').textContent = this.dataset.type === 'depannage' ? 'Demander une intervention' : 'Recevoir mon devis gratuit';
   });
 });
 
