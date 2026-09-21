@@ -227,7 +227,7 @@
         <input type="tel" name="telephone" placeholder="Téléphone *" required>
         <input type="email" name="email" placeholder="Email *" required>
         <input type="text" name="adresse" placeholder="Adresse (Paris / IDF)">
-        <textarea name="description" placeholder="Décrivez votre besoin..."></textarea>
+        <textarea name="description" id="descField" placeholder="Décrivez votre besoin..."></textarea>
         <button type="submit" id="submitBtn">Recevoir mon devis gratuit</button>
         <p class="rgpd">Vos informations servent uniquement à vous recontacter, jamais partagées.</p>
       </form>
@@ -260,10 +260,12 @@ document.querySelectorAll('.type-btn').forEach(function(b) {
       sub.textContent = 'Un technicien vous rappelle sous 20 min';
       sub.style.color = '#dc2626';
       sub.style.fontWeight = '700';
+      document.getElementById('descField').placeholder = 'Optionnel — on vous rappelle vite';
     } else {
       sub.textContent = 'Réponse rapide garantie';
       sub.style.color = '';
       sub.style.fontWeight = '';
+      document.getElementById('descField').placeholder = 'Décrivez votre besoin...';
     }
   });
 });
