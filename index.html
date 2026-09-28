@@ -228,7 +228,10 @@
         <input type="text" name="nom" placeholder="Votre nom *" required>
         <input type="tel" name="telephone" placeholder="Téléphone *" required>
         <input type="email" name="email" placeholder="Email *" required>
-        <input type="text" name="adresse" placeholder="Adresse (Paris / IDF)">
+        <div style="display:flex;gap:8px;">
+          <input type="text" name="adresse" placeholder="Adresse (rue, ville)" style="flex:2;">
+          <input type="text" name="code_postal" placeholder="Code postal *" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required style="flex:1;">
+        </div>
         <textarea name="description" id="descField" placeholder="Décrivez votre besoin..."></textarea>
         <button type="submit" id="submitBtn">Recevoir mon devis gratuit</button>
         <p class="rgpd">Vos informations servent uniquement à vous recontacter, jamais partagées.</p>
@@ -283,7 +286,7 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
     nom: this.nom.value,
     telephone: this.telephone.value,
     email: this.email.value,
-    adresse: this.adresse.value,
+    adresse: (this.adresse.value + (this.code_postal.value ? ' — ' + this.code_postal.value : '')).trim(),
     description: this.description.value,
     type_demande: this.type_demande.value,
     page_origine: window.location.pathname
