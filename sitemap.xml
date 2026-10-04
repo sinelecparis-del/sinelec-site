@@ -81,6 +81,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.sinelec-paris.fr/renovation-electrique-paris.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.sinelec-paris.fr/services/disjoncteur-standard.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
