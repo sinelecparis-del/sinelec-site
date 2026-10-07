@@ -17,6 +17,14 @@
 
 	respond /health 200
 
+	# Redirection 301 : sinelec-paris.fr (sans www) -> https://www.sinelec-paris.fr (fix pages en double Search Console)
+	@nonwww host sinelec-paris.fr
+	redir @nonwww https://www.sinelec-paris.fr{uri} 301
+
+	# Redirection 301 : ancien domaine sinelecparis.fr -> accueil du site actuel (evite les 404)
+	@oldsite host sinelecparis.fr www.sinelecparis.fr
+	redir @oldsite https://www.sinelec-paris.fr/ 301
+
 	# Redirection 301 : /index.html -> / (fix duplicate content Search Console)
 	redir /index.html / 301
 
