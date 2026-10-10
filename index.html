@@ -233,8 +233,8 @@
           <input type="text" name="code_postal" placeholder="Code postal *" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required style="flex:1;">
         </div>
         <textarea name="description" id="descField" placeholder="Décrivez votre besoin..."></textarea>
-        <select name="canal" required>
-          <option value="">Comment nous avez-vous trouvé ? *</option>
+        <select name="canal">
+          <option value="">Comment nous avez-vous trouvé ? (facultatif)</option>
           <option>Google Maps / fiche Google</option>
           <option>Recherche Google</option>
           <option>Annonce Google (publicité)</option>
@@ -299,7 +299,7 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
     description: this.description.value,
     type_demande: this.type_demande.value,
     page_origine: window.location.pathname,
-    canal: this.canal.value,
+    canal: this.canal.value || null,
     referrer: document.referrer || null,
     url_arrivee: window.location.href
   };
