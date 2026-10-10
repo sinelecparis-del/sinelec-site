@@ -280,6 +280,15 @@
           </select>
           <input type="text" name="code_postal" placeholder="Code postal *" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required>
           <textarea name="description" placeholder="Surface, âge de l'installation, date souhaitée..."></textarea>
+          <select name="canal" required>
+            <option value="">Comment nous avez-vous trouvé ? *</option>
+            <option>Google Maps / fiche Google</option>
+            <option>Recherche Google</option>
+            <option>Annonce Google (publicité)</option>
+            <option>ChatGPT / assistant IA</option>
+            <option>Bouche-à-oreille / recommandation</option>
+            <option>Autre</option>
+          </select>
           <button type="submit">Demander ma visite</button>
           <p class="rgpd">Vos informations servent uniquement à vous recontacter, jamais partagées.</p>
         </form>
@@ -348,7 +357,10 @@ document.getElementById('proForm').addEventListener('submit', async function(e) 
     adresse: this.code_postal.value,
     description: desc,
     type_demande: 'devis',
-    page_origine: window.location.pathname
+    page_origine: window.location.pathname,
+    canal: this.canal.value,
+    referrer: document.referrer || null,
+    url_arrivee: window.location.href
   };
 
   try {
