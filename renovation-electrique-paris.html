@@ -280,6 +280,7 @@
           </select>
           <input type="text" name="code_postal" placeholder="Code postal *" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required>
           <textarea name="description" placeholder="Surface, âge de l'installation, date souhaitée..."></textarea>
+          <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;"><label>Ne pas remplir<input type="text" name="site_web" tabindex="-1" autocomplete="off"></label></div>
           <select name="canal">
             <option value="">Comment nous avez-vous trouvé ? (facultatif)</option>
             <option>Google Maps / fiche Google</option>
@@ -339,8 +340,14 @@
 <div class="sticky-call"><a href="tel:+33787388622"><span class="pulse-dot"></span> Appeler — 07 87 38 86 22</a></div>
 
 <script>
+window.__sinelecT0 = Date.now();
 document.getElementById('proForm').addEventListener('submit', async function(e) {
   e.preventDefault();
+  // Anti-spam : champ piège rempli ou envoi en moins de 3 s = robot -> on simule l'envoi sans rien enregistrer
+  if ((this.site_web && this.site_web.value) || (Date.now() - window.__sinelecT0 < 3000)) {
+    this.innerHTML = '<div style="text-align:center;padding:20px 0;"><div style="font-size:40px;margin-bottom:12px;">✅</div><h3 style="margin-bottom:6px;">Demande envoyée !</h3></div>';
+    return;
+  }
   const btn = this.querySelector('button[type="submit"]');
   const originalText = btn.textContent;
   btn.textContent = 'Envoi en cours...';
