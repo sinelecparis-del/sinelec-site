@@ -126,6 +126,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.sinelec-paris.fr/electricien-paris-20e.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.sinelec-paris.fr/electricien-paris-18e.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
