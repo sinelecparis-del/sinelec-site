@@ -126,6 +126,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.sinelec-paris.fr/blog/differentiel-saute-apres-fuite-eau.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.sinelec-paris.fr/electricien-paris-20e.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
