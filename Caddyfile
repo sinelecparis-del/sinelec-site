@@ -38,8 +38,8 @@
 		-Server
 	}
 
-	# Cache navigateur : photos 30 jours, CSS/JS 7 jours (le CSS est versionne via ?v=N dans les pages)
-	@photos path *.jpg *.jpeg *.png *.webp *.svg *.ico
+	# Cache navigateur : photos et polices 30 jours, CSS/JS 7 jours (le CSS est versionne via ?v=N dans les pages)
+	@photos path *.jpg *.jpeg *.png *.webp *.svg *.ico *.woff2
 	header @photos Cache-Control "public, max-age=2592000"
 	@assets path *.css *.js
 	header @assets Cache-Control "public, max-age=604800"
