@@ -33,9 +33,16 @@
 		X-XSS-Protection "1; mode=block"
 		X-Content-Type-Options "nosniff"
 		Referrer-Policy "strict-origin-when-cross-origin"
+		Strict-Transport-Security "max-age=15552000"
 		Content-Security-Policy "default-src 'self'; img-src 'self' data: https: *; style-src 'self' 'unsafe-inline' https: *; script-src 'self' 'unsafe-inline' https: *; font-src 'self' data: https: *; connect-src 'self' https: *; media-src 'self' https: *; object-src 'none'; frame-src 'self' https: *;"
 		-Server
 	}
+
+	# Cache navigateur : photos 30 jours, CSS/JS 7 jours (le CSS est versionne via ?v=N dans les pages)
+	@photos path *.jpg *.jpeg *.png *.webp *.svg *.ico
+	header @photos Cache-Control "public, max-age=2592000"
+	@assets path *.css *.js
+	header @assets Cache-Control "public, max-age=604800"
 
 	root * .
 

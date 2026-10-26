@@ -33,7 +33,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
 .trace { display: flex; align-items: center; gap: 10px; margin: 4px 0; color: var(--border); }
@@ -434,3 +434,6 @@ a.badge-v2:hover { background: var(--bg-panel-hover); }
 @media (max-width: 799px) {
   .cookie-banner { bottom: 58px; }
 }
+
+.skip-link { position: absolute; left: -9999px; top: 0; z-index: 1000; background: #fff; color: #14100A; padding: 10px 16px; border-radius: 0 0 8px 0; font-weight: 600; }
+.skip-link:focus { left: 0; }
