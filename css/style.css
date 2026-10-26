@@ -447,3 +447,8 @@ a.badge-v2:hover { background: var(--bg-panel-hover); }
 
 .skip-link { position: absolute; left: -9999px; top: 0; z-index: 1000; background: #fff; color: #14100A; padding: 10px 16px; border-radius: 0 0 8px 0; font-weight: 600; }
 .skip-link:focus { left: 0; }
+
+.price-table td:first-child { color: var(--text); width: auto; padding-right: 12px; }
+.price-table td:last-child { text-align: right; white-space: nowrap; padding-left: 8px; }
+.price-table a { text-decoration: none; }
+.price-table small { display: block; color: var(--text-muted); font-size: 13px; font-weight: 400; margin-top: 2px; line-height: 1.4; }
