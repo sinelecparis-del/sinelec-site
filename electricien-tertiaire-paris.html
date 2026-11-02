@@ -332,6 +332,8 @@ window.addEventListener('load',function(){setTimeout(g,3500);});})();
 
 <script>
 window.__sinelecT0 = Date.now();
+// Jeton signé par le serveur (preuve que le formulaire a été ouvert dans un vrai navigateur) — facultatif : sans lui, la demande passe quand même
+fetch('https://sinelec-api-production.up.railway.app/api/lead-site/token').then(function(r){return r.json();}).then(function(d){window.__sinelecToken=d.token;}).catch(function(){});
 document.getElementById('proForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   // Anti-spam : champ piège rempli ou envoi en moins de 3 s = robot -> on simule l'envoi sans rien enregistrer
@@ -362,15 +364,10 @@ document.getElementById('proForm').addEventListener('submit', async function(e) 
   };
 
   try {
-    const res = await fetch('https://jbuoiahcovngebzwpovg.supabase.co/rest/v1/leads_site', {
+    const res = await fetch('https://sinelec-api-production.up.railway.app/api/lead-site', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'apikey': 'sb_publishable_bZSJoiOz8uragUIH7sz5sA_8lNXUvaj',
-        'Authorization': 'Bearer sb_publishable_bZSJoiOz8uragUIH7sz5sA_8lNXUvaj',
-        'Prefer': 'return=minimal'
-      },
-      body: JSON.stringify(payload)
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.assign({}, payload, { token: window.__sinelecToken || '', site_web: (this.site_web && this.site_web.value) || '' }))
     });
     if (res.ok) {
       if (typeof gtag === 'function') {
