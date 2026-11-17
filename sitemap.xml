@@ -290,7 +290,7 @@
   </url>
   <url>
     <loc>https://www.sinelec-paris.fr/blog/tableau-electrique-ancien.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -308,6 +308,12 @@
   </url>
   <url>
     <loc>https://www.sinelec-paris.fr/blog/panne-electrique-que-faire.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sinelec-paris.fr/blog/prix-tableau-electrique.html</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
