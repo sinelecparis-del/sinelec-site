@@ -21,6 +21,13 @@
 	@nonwww host sinelec-paris.fr
 	redir @nonwww https://www.sinelec-paris.fr{uri} 301
 
+	# Redirection 301 : adresse technique Railway -> https://www.sinelec-paris.fr (evite une copie du site indexable ; /health reste joignable)
+	@railway {
+		host sinelec-site-production.up.railway.app
+		not path /health
+	}
+	redir @railway https://www.sinelec-paris.fr{uri} 301
+
 	# Redirection 301 : ancien domaine sinelecparis.fr -> accueil du site actuel (evite les 404)
 	@oldsite host sinelecparis.fr www.sinelecparis.fr
 	redir @oldsite https://www.sinelec-paris.fr/ 301
