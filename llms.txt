@@ -32,6 +32,7 @@
 
 ## Guides
 
+- [Interphone GSM : fonctionnement, installation et prix](https://www.sinelec-paris.fr/blog/interphone-gsm.html)
 - [Panne électrique ou coupure de courant : que faire ?](https://www.sinelec-paris.fr/blog/panne-electrique-que-faire.html)
 - [Prix pour changer un tableau électrique en 2026](https://www.sinelec-paris.fr/blog/prix-tableau-electrique.html)
 - [Disjoncteur qui saute : pourquoi, que faire, prix](https://www.sinelec-paris.fr/blog/pourquoi-disjoncteur-saute.html)
